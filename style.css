@@ -700,20 +700,27 @@ footer span{
   transition: all 0.5s;
 }
 
-/* responsive media query start */
-@media (max-width: 1104px) {
+/*responsive media query start*/
+@media (max-width: 1100px) {
     .about .about-content .left img{
         height: 350px;
         width: 350px;
     }
+    .max-width {
+        padding: 0 77px;
+    }
+
 }
 
-@media (max-width: 991px) {
-    .max-width{
-        padding: 0 50px;
-    }
+@media (max-width: 1050px) {
+    .max-width {
+    padding: 0px 38px;
 }
+
+} 
+
 @media (max-width: 947px){
+     
     .menu-btn{
         display: block;
         z-index: 999;
