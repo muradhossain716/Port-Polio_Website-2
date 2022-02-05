@@ -1,10 +1,14 @@
+
+
 $(document).ready(function(){
     $(window).scroll(function(){
         // sticky navbar on scroll script
         if(this.scrollY > 20){
             $('.navbar').addClass("sticky");
+            $('.nav__link--btn').addClass('open-acount');
         }else{
             $('.navbar').removeClass("sticky");
+             $('.nav__link--btn').removeClass('open-acount');
         }
         
         // scroll-up button show/hide script
@@ -31,7 +35,7 @@ $(document).ready(function(){
     $('.menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
-    });
+     });
 
     // typing text animation script
     var typed = new Typed(".typing", {
@@ -70,4 +74,34 @@ $(document).ready(function(){
             }
         }
     });
+});
+
+
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.btn--close-modal');
+const btnOpenModal = document.querySelector('.btn--show-modal');
+// Modal window
+
+const openModal = function (e) {
+  e.preventDefault();
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+btnOpenModal.addEventListener('click', openModal);
+
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
 });

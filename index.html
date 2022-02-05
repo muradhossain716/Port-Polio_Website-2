@@ -32,8 +32,11 @@
                 <li><a href="#skills" class="menu-btn">Skills</a></li>
                 <li><a href="#teams" class="menu-btn">Teams</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
-
+                <li>
+                    <a class="nav__link--btn btn--show-modal" href="#">Open account</a>
+                </li>
             </ul>
+            
             <div class="menu-btn">
 
                 <i class="fas fa-bars"></i>
@@ -263,6 +266,24 @@
         <span>Created By Murad Ahamed<span class="far fa-copyright"></span> 2022 All rights reserved.</span>
     </footer>
 
+    <!--Modal section-->
+    <div class="modal hidden">
+        <button class="btn--close-modal">&times;</button>
+        <h2 class="modal__header">
+            Open your bank account <br />
+            in just <span class="highlight">5 minutes</span>
+        </h2>
+        <form class="modal__form">
+            <label>First Name</label>
+            <input type="text" />
+            <label>Last Name</label>
+            <input type="text" />
+            <label>Email Address</label>
+            <input type="email" />
+            <button class="next-step-btn">Next step &rarr;</button>
+        </form>
+    </div>
+    <div class="overlay hidden"></div>
     <script src="script.js"></script>
 </body>
 
