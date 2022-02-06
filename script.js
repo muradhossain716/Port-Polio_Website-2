@@ -79,6 +79,7 @@ $(document).ready(function(){
 
 
 const modal = document.querySelector('.modal');
+const modalBtn=document.querySelector('.next-step-btn');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnOpenModal = document.querySelector('.btn--show-modal');
@@ -105,3 +106,7 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+modalBtn.addEventListener('click',function(e){
+    e.preventDefault();
+    closeModal();
+})

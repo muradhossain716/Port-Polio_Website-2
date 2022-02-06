@@ -804,6 +804,9 @@ footer span{
 }
 
 @media (max-width: 500px) {
+    .nav__link--btn{
+        visibility: hidden;
+    }
     .home .home-content .text-2{
         font-size: 50px;
     }
