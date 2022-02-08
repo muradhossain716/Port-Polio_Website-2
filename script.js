@@ -83,6 +83,8 @@ const modalBtn=document.querySelector('.next-step-btn');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnOpenModal = document.querySelector('.btn--show-modal');
+const nav=document.querySelector('.navbar');
+
 // Modal window
 
 const openModal = function (e) {
@@ -95,9 +97,9 @@ const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
-
+//open modal
 btnOpenModal.addEventListener('click', openModal);
-
+//close modal
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
@@ -106,7 +108,21 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
 modalBtn.addEventListener('click',function(e){
     e.preventDefault();
     closeModal();
 })
+
+const fadeMouseOver=function(e){
+    const clicked=e.target.closest('a');
+    if(!clicked) return;
+    const siblings=clicked.closest('.navbar').querySelectorAll('a');
+    console.log(siblings);
+    siblings.forEach(element => {if(element!==clicked)
+        element.style.opacity=this  }
+    )};
+
+//menu fade animation
+nav.addEventListener('mouseover',fadeMouseOver.bind(0.5));
+nav.addEventListener('mouseout',fadeMouseOver.bind(1));
