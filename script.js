@@ -115,13 +115,16 @@ modalBtn.addEventListener('click',function(e){
 })
 
 const fadeMouseOver=function(e){
-    const clicked=e.target.closest('a');
-    if(!clicked) return;
-    const siblings=clicked.closest('.navbar').querySelectorAll('a');
-    console.log(siblings);
-    siblings.forEach(element => {if(element!==clicked)
-        element.style.opacity=this  }
-    )};
+    if(e.target.classList.contains('menu-btn')){
+        const clicked=e.target;
+    
+        const siblings=clicked.closest('.navbar').querySelectorAll('a');
+        console.log(siblings);
+        siblings.forEach(element => {if(element!==clicked)
+            element.style.opacity=this;
+        })
+    }
+};
 
 //menu fade animation
 nav.addEventListener('mouseover',fadeMouseOver.bind(0.5));
